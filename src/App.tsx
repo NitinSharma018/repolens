@@ -39,6 +39,8 @@ import {
   CartesianGrid,
 } from "recharts";
 
+import ContributorIntelligence from "./components/ContributorIntelligence";
+
 import {
   getGitHubUser,
   getGitHubRepository,
@@ -886,6 +888,13 @@ function RepositoryResult({
         activity={activity}
         commits={commits}
       />
+
+      {/* CONTRIBUTOR INTELLIGENCE */}
+
+<ContributorIntelligence
+  owner={repository.owner.login}
+  repository={repository.name}
+/>
 
       {/* DOCUMENTATION */}
 

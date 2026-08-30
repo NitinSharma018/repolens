@@ -101,6 +101,29 @@ export type GitHubCommit = {
 };
 
 /* ================================================= */
+/* CONTRIBUTOR STATISTICS                           */
+/* ================================================= */
+
+export type GitHubContributorWeek = {
+  w: number;
+  a: number;
+  d: number;
+  c: number;
+};
+
+export type GitHubContributor = {
+  author: {
+    login: string;
+    avatar_url: string;
+    html_url: string;
+  } | null;
+
+  total: number;
+
+  weeks: GitHubContributorWeek[];
+};
+
+/* ================================================= */
 /* CONTENT                                           */
 /* ================================================= */
 
@@ -138,6 +161,12 @@ function handleGitHubError(
   if (response.status === 401) {
     throw new Error(
       "GitHub authentication is required for this request."
+    );
+  }
+
+  if (response.status === 202) {
+    throw new Error(
+      "GitHub is still calculating repository statistics. Please try again."
     );
   }
 
@@ -245,6 +274,42 @@ export async function getRepositoryCommits(
       headers,
     }
   );
+
+  if (!response.ok) {
+    handleGitHubError(response);
+  }
+
+  return response.json();
+}
+
+/* ================================================= */
+/* GET CONTRIBUTOR STATISTICS                       */
+/* ================================================= */
+
+export async function getRepositoryContributors(
+  owner: string,
+  repository: string
+): Promise<GitHubContributor[]> {
+  const response = await fetch(
+    `${GITHUB_API}/repos/${encodeURIComponent(
+      owner
+    )}/${encodeURIComponent(
+      repository
+    )}/stats/contributors`,
+    {
+      headers,
+    }
+  );
+
+  /*
+   * GitHub may return 202 while statistics
+   * are still being calculated.
+   */
+  if (response.status === 202) {
+    throw new Error(
+      "GitHub is still calculating contributor statistics. Please try again in a moment."
+    );
+  }
 
   if (!response.ok) {
     handleGitHubError(response);
