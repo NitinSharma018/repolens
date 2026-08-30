@@ -40,6 +40,7 @@ import {
 } from "recharts";
 
 import ContributorIntelligence from "./components/ContributorIntelligence";
+import IssuePRIntelligence from "./components/IssuePRIntelligence";
 
 import {
   getGitHubUser,
@@ -892,6 +893,11 @@ function RepositoryResult({
       {/* CONTRIBUTOR INTELLIGENCE */}
 
 <ContributorIntelligence
+  owner={repository.owner.login}
+  repository={repository.name}
+/>
+
+<IssuePRIntelligence
   owner={repository.owner.login}
   repository={repository.name}
 />

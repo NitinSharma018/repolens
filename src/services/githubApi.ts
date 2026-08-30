@@ -124,6 +124,72 @@ export type GitHubContributor = {
 };
 
 /* ================================================= */
+/* ISSUES                                            */
+/* ================================================= */
+
+export type GitHubIssue = {
+  id: number;
+  number: number;
+
+  title: string;
+
+  html_url: string;
+
+  state: "open" | "closed";
+
+  created_at: string;
+  updated_at: string;
+  closed_at: string | null;
+
+  user: {
+    login: string;
+    avatar_url: string;
+    html_url: string;
+  } | null;
+
+  comments: number;
+
+  pull_request?: {
+    url: string;
+    html_url: string;
+  };
+};
+
+/* ================================================= */
+/* PULL REQUEST                                      */
+/* ================================================= */
+
+export type GitHubPullRequest = {
+  id: number;
+  number: number;
+
+  title: string;
+
+  html_url: string;
+
+  state: "open" | "closed";
+
+  created_at: string;
+  updated_at: string;
+  closed_at: string | null;
+  merged_at: string | null;
+
+  user: {
+    login: string;
+    avatar_url: string;
+    html_url: string;
+  } | null;
+
+  comments: number;
+  commits: number;
+  additions: number;
+  deletions: number;
+  changed_files: number;
+
+  draft: boolean | null;
+};
+
+/* ================================================= */
 /* CONTENT                                           */
 /* ================================================= */
 
@@ -310,6 +376,68 @@ export async function getRepositoryContributors(
       "GitHub is still calculating contributor statistics. Please try again in a moment."
     );
   }
+
+  if (!response.ok) {
+    handleGitHubError(response);
+  }
+
+  return response.json();
+}
+
+/* ================================================= */
+/* GET ISSUES                                        */
+/* ================================================= */
+
+export async function getRepositoryIssues(
+  owner: string,
+  repository: string
+): Promise<GitHubIssue[]> {
+  const params = new URLSearchParams({
+    state: "all",
+    per_page: "100",
+  });
+
+  const response = await fetch(
+    `${GITHUB_API}/repos/${encodeURIComponent(
+      owner
+    )}/${encodeURIComponent(
+      repository
+    )}/issues?${params.toString()}`,
+    {
+      headers,
+    }
+  );
+
+  if (!response.ok) {
+    handleGitHubError(response);
+  }
+
+  return response.json();
+}
+
+/* ================================================= */
+/* GET PULL REQUESTS                                 */
+/* ================================================= */
+
+export async function getRepositoryPullRequests(
+  owner: string,
+  repository: string
+): Promise<GitHubPullRequest[]> {
+  const params = new URLSearchParams({
+    state: "all",
+    per_page: "100",
+  });
+
+  const response = await fetch(
+    `${GITHUB_API}/repos/${encodeURIComponent(
+      owner
+    )}/${encodeURIComponent(
+      repository
+    )}/pulls?${params.toString()}`,
+    {
+      headers,
+    }
+  );
 
   if (!response.ok) {
     handleGitHubError(response);

@@ -2868,3 +2868,404 @@ a {
     width: 22px;
   }
 }
+
+/* ========================================================= */
+/* ISSUE & PR INTELLIGENCE                                   */
+/* ========================================================= */
+
+.issue-pr-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 24px;
+  padding: 20px;
+  background: #111111;
+  border: 1px solid #292929;
+  border-radius: 16px;
+  color: #f5f5f5;
+}
+
+.issue-pr-section *,
+.issue-pr-section *::before,
+.issue-pr-section *::after {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.issue-pr-section .analytics-heading {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.issue-pr-section .analytics-heading > div:first-child {
+  min-width: 0;
+}
+
+.issue-pr-section .analytics-heading h3 {
+  margin: 4px 0 0;
+  color: #f5f5f5;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.issue-pr-section .preview-label {
+  margin: 0;
+  color: #777777;
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* RISK BADGE */
+
+.issue-pr-section .issue-pr-risk {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: #171717;
+  color: #e5e5e5;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.issue-pr-section .issue-pr-risk span {
+  color: #8b8b8b;
+  font-weight: 600;
+}
+
+.issue-pr-section .issue-pr-risk.low {
+  color: #d8e8dc;
+}
+
+.issue-pr-section .issue-pr-risk.moderate {
+  color: #e8d8b8;
+}
+
+.issue-pr-section .issue-pr-risk.high {
+  color: #e7c4c4;
+}
+
+/* ========================================================= */
+/* OVERVIEW METRICS                                          */
+/* ========================================================= */
+
+.issue-pr-section .issue-pr-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.issue-pr-section .issue-pr-grid > * {
+  min-width: 0;
+  min-height: 108px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  background: #151515;
+  color: #f5f5f5;
+}
+
+/*
+ * MetricCard doesn't need a special class.
+ * We style its direct children based on its
+ * position/content without affecting other UI.
+ */
+
+.issue-pr-section .issue-pr-grid > * svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  padding: 8px;
+  box-sizing: content-box;
+  border-radius: 9px;
+  background: #202020;
+  color: #a8a8a8;
+}
+
+.issue-pr-section .issue-pr-grid > * > div:last-child {
+  min-width: 0;
+}
+
+.issue-pr-section .issue-pr-grid > * span {
+  display: block;
+  color: #858585;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.issue-pr-section .issue-pr-grid > * strong {
+  display: block;
+  margin-top: 5px;
+  color: #f1f1f1;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.issue-pr-section .issue-pr-grid > * small {
+  display: block;
+  margin-top: 5px;
+  color: #666666;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+/* ========================================================= */
+/* DETAIL CARDS                                               */
+/* ========================================================= */
+
+.issue-pr-section .issue-pr-details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.issue-pr-section .issue-pr-detail-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  background: #151515;
+}
+
+.issue-pr-section .issue-pr-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.issue-pr-section .issue-pr-detail-header > div {
+  min-width: 0;
+}
+
+.issue-pr-section .issue-pr-detail-header svg {
+  flex-shrink: 0;
+  color: #777777;
+}
+
+.issue-pr-section .issue-pr-detail-header strong {
+  display: block;
+  margin-top: 5px;
+  color: #eeeeee;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+/* PROGRESS */
+
+.issue-pr-section .issue-pr-progress {
+  width: 100%;
+  height: 6px;
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #242424;
+}
+
+.issue-pr-section .issue-pr-progress span {
+  display: block;
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: #8b8b8b;
+  transition: width 0.3s ease;
+}
+
+/* FOOTER */
+
+.issue-pr-section .issue-pr-detail-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 9px;
+}
+
+.issue-pr-section .issue-pr-detail-footer span {
+  color: #686868;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+/* ========================================================= */
+/* WORKFLOW RISK                                              */
+/* ========================================================= */
+
+.issue-pr-section .issue-pr-risk-panel {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px;
+  margin-top: 0;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  background: #151515;
+}
+
+.issue-pr-section .issue-pr-risk-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #252525;
+  color: #b5b5b5;
+}
+
+.issue-pr-section .issue-pr-risk-panel > div:last-child {
+  min-width: 0;
+}
+
+.issue-pr-section .issue-pr-risk-panel strong {
+  display: block;
+  margin-top: 4px;
+  color: #eeeeee;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.issue-pr-section .issue-pr-risk-panel p:last-child {
+  margin: 6px 0 0;
+  color: #858585;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ========================================================= */
+/* LOADING / ERROR / EMPTY                                    */
+/* ========================================================= */
+
+.issue-pr-section .issue-pr-loading,
+.issue-pr-section .issue-pr-empty {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  background: #151515;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.issue-pr-section .issue-pr-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #382929;
+  border-radius: 10px;
+  background: #1a1414;
+  color: #c99b9b;
+  font-size: 12px;
+}
+
+/* ========================================================= */
+/* STALE ITEMS / EXTRA CONTENT                                */
+/* ========================================================= */
+
+.issue-pr-section .issue-pr-stale,
+.issue-pr-section .issue-pr-stale-items,
+.issue-pr-section .issue-pr-community {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  background: #151515;
+  color: #858585;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ========================================================= */
+/* RESPONSIVE                                                 */
+/* ========================================================= */
+
+@media (max-width: 900px) {
+  .issue-pr-section .issue-pr-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .issue-pr-section .issue-pr-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .issue-pr-section {
+    padding: 14px;
+  }
+
+  .issue-pr-section .analytics-heading {
+    flex-direction: column;
+  }
+
+  .issue-pr-section .issue-pr-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .issue-pr-section .issue-pr-risk {
+    align-self: flex-start;
+  }
+}
+/* ================================================= */
+/* ISSUE & PR INTELLIGENCE - COMMENTS POLISH        */
+/* ================================================= */
+
+.issue-pr-comments {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 0 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #8b8b8b;
+}
+
+.issue-pr-comments svg {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+.issue-pr-comments span {
+  display: block;
+}
+
+.issue-pr-comments strong {
+  color: #d4d4d4;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .issue-pr-comments {
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 2px;
+  }
+}
