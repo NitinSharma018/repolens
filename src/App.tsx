@@ -42,6 +42,7 @@ import {
 import ContributorIntelligence from "./components/ContributorIntelligence";
 import IssuePRIntelligence from "./components/IssuePRIntelligence";
 import CodebaseIntelligence from "./components/CodebaseIntelligence";
+import RepositoryHealthIntelligence from "./components/RepositoryHealthIntelligence";
 
 import {
   getGitHubUser,
@@ -907,6 +908,13 @@ function RepositoryResult({
   owner={repository.owner.login}
   repository={repository.name}
 />
+
+<RepositoryHealthIntelligence
+  owner={repository.owner.login}
+  repository={repository.name}
+/>
+
+
       {/* DOCUMENTATION */}
 
       <DocumentationSection
