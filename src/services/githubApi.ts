@@ -471,3 +471,50 @@ export async function getRepositoryContents(
 
   return response.json();
 }
+
+/* ================================================= */
+/* GET REPOSITORY CONTENTS RECURSIVELY              */
+/* ================================================= */
+
+export async function getRepositoryTree(
+  owner: string,
+  repository: string
+): Promise<GitHubContent[]> {
+  const response = await fetch(
+    `${GITHUB_API}/repos/${encodeURIComponent(
+      owner
+    )}/${encodeURIComponent(
+      repository
+    )}/git/trees/HEAD?recursive=1`,
+    {
+      headers,
+    }
+  );
+
+  if (!response.ok) {
+    handleGitHubError(response);
+  }
+
+  const data = await response.json();
+
+  return (data.tree ?? []).map(
+    (item: {
+      path: string;
+      type: "blob" | "tree";
+      size?: number;
+    }) => ({
+      name:
+        item.path.split("/").pop() ??
+        item.path,
+
+      path: item.path,
+
+      type:
+        item.type === "tree"
+          ? "dir"
+          : "file",
+
+      size: item.size,
+    })
+  );
+}

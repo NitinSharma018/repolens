@@ -3269,3 +3269,461 @@ a {
     padding: 0 2px;
   }
 }
+
+
+/* ================================================= */
+/* CODEBASE INTELLIGENCE                             */
+/* ================================================= */
+
+.codebase-intelligence {
+  width: 100%;
+  margin-top: 28px;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid #29292d;
+  border-radius: 18px;
+  background: #111112;
+  color: #f4f4f5;
+}
+
+/* HEADER */
+
+.codebase-intelligence-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.codebase-intelligence-header h2 {
+  margin: 4px 0 5px;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.codebase-intelligence-header p {
+  margin: 0;
+  max-width: 650px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #85858c;
+}
+
+.codebase-intelligence .section-eyebrow {
+  display: block;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #77777e;
+}
+
+/* HEALTH */
+
+.codebase-health {
+  min-width: 118px;
+  padding: 10px 13px;
+  box-sizing: border-box;
+  border: 1px solid #303034;
+  border-radius: 11px;
+  background: #151516;
+  text-align: right;
+}
+
+.codebase-health > span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #77777e;
+}
+
+.codebase-health strong {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.codebase-health strong small {
+  margin-left: 2px;
+  font-size: 10px;
+  color: #85858c;
+}
+
+.codebase-health em {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  color: #b8b8bd;
+}
+
+/* ================================================= */
+/* METRICS                                           */
+/* ================================================= */
+
+.codebase-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.codebase-metric-card {
+  min-height: 92px;
+  padding: 15px 16px;
+  box-sizing: border-box;
+  border: 1px solid #29292d;
+  border-radius: 12px;
+  background: #151516;
+}
+
+.codebase-metric-card span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: #74747b;
+}
+
+.codebase-metric-card strong {
+  display: block;
+  font-size: 23px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #eeeeef;
+}
+
+/* ================================================= */
+/* DETAILS                                           */
+/* ================================================= */
+
+.codebase-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.codebase-panel {
+  min-width: 0;
+  padding: 17px;
+  box-sizing: border-box;
+  border: 1px solid #29292d;
+  border-radius: 12px;
+  background: #151516;
+}
+
+.codebase-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.codebase-panel-header h3 {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 650;
+  color: #dedee1;
+}
+
+.codebase-panel-header span {
+  flex-shrink: 0;
+  font-size: 9px;
+  color: #717178;
+}
+
+/* ================================================= */
+/* LANGUAGE DISTRIBUTION                             */
+/* ================================================= */
+
+.codebase-language-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.codebase-language {
+  min-width: 0;
+}
+
+.codebase-language-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.codebase-language-info span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  color: #bdbdc2;
+}
+
+.codebase-language-info strong {
+  flex-shrink: 0;
+  font-size: 10px;
+  color: #e1e1e4;
+}
+
+.codebase-progress {
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #29292c;
+}
+
+.codebase-progress-fill {
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: #a5a5a9;
+}
+
+.codebase-language small {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  color: #6f6f76;
+}
+
+/* ================================================= */
+/* TESTING SIGNALS                                   */
+/* ================================================= */
+
+.codebase-test-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.codebase-test-summary > div {
+  padding: 12px;
+  border: 1px solid #252529;
+  border-radius: 9px;
+  background: #18181a;
+}
+
+.codebase-test-summary strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.codebase-test-summary span {
+  font-size: 9px;
+  color: #74747b;
+}
+
+.codebase-panel-note {
+  margin: 10px 0 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #77777e;
+}
+
+/* ================================================= */
+/* DIRECTORIES                                      */
+/* ================================================= */
+
+.codebase-directory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.codebase-directory {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-width: 0;
+  padding: 9px 11px;
+  box-sizing: border-box;
+  border: 1px solid #242427;
+  border-radius: 8px;
+  background: #18181a;
+}
+
+.codebase-directory span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+  color: #bcbcc1;
+}
+
+.codebase-directory strong {
+  flex-shrink: 0;
+  font-size: 10px;
+  color: #85858c;
+}
+
+/* ================================================= */
+/* LARGEST FILES                                     */
+/* ================================================= */
+
+.codebase-file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.codebase-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-width: 0;
+  padding: 9px 11px;
+  box-sizing: border-box;
+  border: 1px solid #242427;
+  border-radius: 8px;
+  background: #18181a;
+}
+
+.codebase-file > div {
+  min-width: 0;
+}
+
+.codebase-file strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+  color: #c7c7cc;
+}
+
+.codebase-file small {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 8px;
+  color: #65656c;
+}
+
+.codebase-file > span {
+  flex-shrink: 0;
+  font-size: 9px;
+  color: #8a8a91;
+}
+
+/* ================================================= */
+/* INSIGHT                                           */
+/* ================================================= */
+
+.codebase-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 12px;
+  padding: 13px 15px;
+  box-sizing: border-box;
+  border: 1px solid #29292d;
+  border-radius: 11px;
+  background: #151516;
+}
+
+.codebase-insight-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #202023;
+  color: #9a9aa1;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.codebase-insight span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #77777e;
+}
+
+.codebase-insight p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #929299;
+}
+
+/* ================================================= */
+/* EMPTY / LOADING / ERROR                           */
+/* ================================================= */
+
+.codebase-empty,
+.codebase-loading,
+.codebase-error {
+  padding: 18px;
+  border: 1px dashed #303034;
+  border-radius: 9px;
+  text-align: center;
+  font-size: 10px;
+  color: #73737a;
+}
+
+.codebase-error {
+  color: #b1b1b6;
+}
+
+/* ================================================= */
+/* RESPONSIVE                                        */
+/* ================================================= */
+
+@media (max-width: 900px) {
+  .codebase-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .codebase-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .codebase-intelligence {
+    padding: 18px;
+  }
+
+  .codebase-intelligence-header {
+    flex-direction: column;
+  }
+
+  .codebase-health {
+    text-align: left;
+  }
+
+  .codebase-metrics {
+    grid-template-columns: 1fr;
+  }
+}

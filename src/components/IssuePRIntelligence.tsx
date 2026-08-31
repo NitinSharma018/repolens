@@ -53,11 +53,13 @@ export default function IssuePRIntelligence({
   /* FETCH DATA                                        */
   /* ================================================= */
 
-  async function loadData() {
-    try {
-      setLoading(true);
-      setError(null);
+ 
 
+useEffect(() => {
+  let cancelled = false;
+
+  const fetchData = async () => {
+    try {
       const [
         issueData,
         pullRequestData,
@@ -72,24 +74,31 @@ export default function IssuePRIntelligence({
         ),
       ]);
 
-      setIssues(issueData);
-      setPullRequests(
-        pullRequestData
-      );
+      if (!cancelled) {
+        setIssues(issueData);
+        setPullRequests(
+          pullRequestData
+        );
+        setLoading(false);
+      }
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Unable to load issue and pull request data."
-      );
-    } finally {
-      setLoading(false);
+      if (!cancelled) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Unable to load issue and pull request data."
+        );
+        setLoading(false);
+      }
     }
-  }
+  };
 
-  useEffect(() => {
-    loadData();
-  }, [owner, repository]);
+  fetchData();
+
+  return () => {
+    cancelled = true;
+  };
+}, [owner, repository]);
 
   /* ================================================= */
   /* ANALYSIS                                          */
