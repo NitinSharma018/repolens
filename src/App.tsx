@@ -44,6 +44,7 @@ import IssuePRIntelligence from "./components/IssuePRIntelligence";
 import CodebaseIntelligence from "./components/CodebaseIntelligence";
 import RepositoryHealthIntelligence from "./components/RepositoryHealthIntelligence";
 import DevelopmentTrendIntelligence from "./components/DevelopmentTrendIntelligence";
+import ReleaseVersionIntelligence from "./components/ReleaseVersionIntelligence";
 
 import {
   getGitHubUser,
@@ -916,6 +917,11 @@ function RepositoryResult({
 />
 
 <DevelopmentTrendIntelligence
+  owner={repository.owner.login}
+  repository={repository.name}
+/>
+
+<ReleaseVersionIntelligence
   owner={repository.owner.login}
   repository={repository.name}
 />

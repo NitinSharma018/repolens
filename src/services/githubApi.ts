@@ -1,10 +1,11 @@
-const GITHUB_API = "https://api.github.com";
 
-const headers = {
-  Accept: "application/vnd.github+json",
-  "X-GitHub-Api-Version": "2026-03-10",
-};
-
+async function fetchGitHub(
+  path: string
+): Promise<Response> {
+  return fetch(
+    `/api/github?path=${encodeURIComponent(path)}`
+  );
+}
 /* ================================================= */
 /* GITHUB USER                                       */
 /* ================================================= */
@@ -248,14 +249,9 @@ function handleGitHubError(
 export async function getGitHubUser(
   username: string
 ): Promise<GitHubUser> {
-  const response = await fetch(
-    `${GITHUB_API}/users/${encodeURIComponent(
-      username
-    )}`,
-    {
-      headers,
-    }
-  );
+  const response = await fetchGitHub(
+  `/users/${encodeURIComponent(username)}`
+);
 
   if (!response.ok) {
     handleGitHubError(response);
@@ -272,16 +268,9 @@ export async function getGitHubRepository(
   owner: string,
   repository: string
 ): Promise<GitHubRepository> {
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}`,
-    {
-      headers,
-    }
-  );
+  const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repository)}`
+);
 
   if (!response.ok) {
     handleGitHubError(response);
@@ -298,16 +287,11 @@ export async function getRepositoryLanguages(
   owner: string,
   repository: string
 ): Promise<Record<string, number>> {
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}/languages`,
-    {
-      headers,
-    }
-  );
+  const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+    repository
+  )}/languages`
+);
 
   if (!response.ok) {
     handleGitHubError(response);
@@ -330,17 +314,11 @@ export async function getRepositoryCommits(
     per_page: "30",
   });
 
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}/commits?${params.toString()}`,
-    {
-      headers,
-    }
-  );
-
+  const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+    repository
+  )}/commits?${params.toString()}`
+);
   if (!response.ok) {
     handleGitHubError(response);
   }
@@ -356,16 +334,11 @@ export async function getRepositoryContributors(
   owner: string,
   repository: string
 ): Promise<GitHubContributor[]> {
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}/stats/contributors`,
-    {
-      headers,
-    }
-  );
+  const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+    repository
+  )}/stats/contributors`
+);
 
   /*
    * GitHub may return 202 while statistics
@@ -397,16 +370,11 @@ export async function getRepositoryIssues(
     per_page: "100",
   });
 
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}/issues?${params.toString()}`,
-    {
-      headers,
-    }
-  );
+ const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+    repository
+  )}/issues?${params.toString()}`
+);
 
   if (!response.ok) {
     handleGitHubError(response);
@@ -428,16 +396,11 @@ export async function getRepositoryPullRequests(
     per_page: "100",
   });
 
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}/pulls?${params.toString()}`,
-    {
-      headers,
-    }
-  );
+  const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+    repository
+  )}/pulls?${params.toString()}`
+);
 
   if (!response.ok) {
     handleGitHubError(response);
@@ -454,16 +417,11 @@ export async function getRepositoryContents(
   owner: string,
   repository: string
 ): Promise<GitHubContent[]> {
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}/contents`,
-    {
-      headers,
-    }
-  );
+  const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+    repository
+  )}/contents`
+);
 
   if (!response.ok) {
     handleGitHubError(response);
@@ -480,16 +438,11 @@ export async function getRepositoryTree(
   owner: string,
   repository: string
 ): Promise<GitHubContent[]> {
-  const response = await fetch(
-    `${GITHUB_API}/repos/${encodeURIComponent(
-      owner
-    )}/${encodeURIComponent(
-      repository
-    )}/git/trees/HEAD?recursive=1`,
-    {
-      headers,
-    }
-  );
+  const response = await fetchGitHub(
+  `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+    repository
+  )}/git/trees/HEAD?recursive=1`
+);
 
   if (!response.ok) {
     handleGitHubError(response);
