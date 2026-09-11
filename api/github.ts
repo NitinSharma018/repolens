@@ -1,3 +1,4 @@
+/// <reference types="node" />
 export default {
   async fetch(request: Request) {
     if (request.method !== "GET") {

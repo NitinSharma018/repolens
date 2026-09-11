@@ -4781,3 +4781,342 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* ================================================= */
+/* OVERALL ENGINEERING INSIGHTS                      */
+/* ================================================= */
+
+.overall-engineering-section {
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ================================================= */
+/* HEADER                                            */
+/* ================================================= */
+
+.overall-engineering-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 26px;
+}
+
+.overall-engineering-header > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.overall-engineering-header .section-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.overall-engineering-header h2 {
+  margin: 0;
+  font-size: 27px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.overall-engineering-header .section-description {
+  max-width: 760px;
+  margin: 9px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.62;
+}
+
+/* ================================================= */
+/* SCORE CARD                                        */
+/* ================================================= */
+
+.overall-score-card {
+  min-width: 150px;
+  padding: 18px 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.overall-score {
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.overall-score-label {
+  margin-top: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.52;
+}
+
+.overall-verdict {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 11px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Score states */
+
+.score-excellent {
+  font-weight: 800;
+}
+
+.score-healthy {
+  font-weight: 800;
+}
+
+.score-attention {
+  font-weight: 800;
+}
+
+.score-risk {
+  font-weight: 800;
+}
+
+/* Verdict states */
+
+.overall-verdict.excellent,
+.overall-verdict.healthy {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.overall-verdict.attention {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.overall-verdict.risk {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* ================================================= */
+/* INSIGHT GRID                                      */
+/* ================================================= */
+
+.overall-engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* ================================================= */
+/* INSIGHT CARDS                                     */
+/* ================================================= */
+
+.overall-insight-card {
+  min-height: 190px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.overall-insight-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-1px);
+}
+
+/* ================================================= */
+/* CARD HEADINGS                                     */
+/* ================================================= */
+
+.overall-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+
+.overall-card-heading h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.overall-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ================================================= */
+/* LISTS                                             */
+/* ================================================= */
+
+.overall-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.overall-list li {
+  position: relative;
+  padding-left: 17px;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.76;
+}
+
+.overall-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.65;
+}
+
+/* ================================================= */
+/* EMPTY STATE                                       */
+/* ================================================= */
+
+.overall-empty {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.48;
+}
+
+/* ================================================= */
+/* FINAL VERDICT                                     */
+/* ================================================= */
+
+.overall-final-insight {
+  margin-top: 14px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.overall-final-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.overall-final-heading span {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.overall-final-heading h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.overall-final-insight p {
+  margin: 0;
+  max-width: 900px;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.68;
+}
+
+/* ================================================= */
+/* LOADING / ERROR                                   */
+/* ================================================= */
+
+.overall-engineering-loading,
+.overall-engineering-error {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+/* ================================================= */
+/* RESPONSIVE                                        */
+/* ================================================= */
+
+@media (max-width: 800px) {
+  .overall-engineering-section {
+    padding: 20px;
+  }
+
+  .overall-engineering-header {
+    flex-direction: column;
+  }
+
+  .overall-score-card {
+    width: 100%;
+  }
+
+  .overall-engineering-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .overall-engineering-section {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .overall-engineering-header h2 {
+    font-size: 23px;
+  }
+
+  .overall-engineering-header .section-description {
+    font-size: 13px;
+  }
+
+  .overall-insight-card {
+    min-height: auto;
+    padding: 17px;
+  }
+
+  .overall-final-insight {
+    padding: 17px;
+  }
+}

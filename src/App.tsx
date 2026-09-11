@@ -45,6 +45,8 @@ import CodebaseIntelligence from "./components/CodebaseIntelligence";
 import RepositoryHealthIntelligence from "./components/RepositoryHealthIntelligence";
 import DevelopmentTrendIntelligence from "./components/DevelopmentTrendIntelligence";
 import ReleaseVersionIntelligence from "./components/ReleaseVersionIntelligence";
+import OverallEngineeringInsights from "./components/OverallEngineeringInsights";
+
 
 import {
   getGitHubUser,
@@ -925,6 +927,13 @@ function RepositoryResult({
   owner={repository.owner.login}
   repository={repository.name}
 />
+
+<OverallEngineeringInsights
+  owner={repository.owner.login}
+  repository={repository.name}
+/>
+
+
 
 
       {/* DOCUMENTATION */}
