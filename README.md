@@ -2,49 +2,61 @@
 
 > Understand GitHub repositories at a glance.
 
-RepoLens is a web-based GitHub repository intelligence dashboard that transforms raw GitHub repository data into readable statistics, visual analytics, health metrics, and actionable insights.
+RepoLens is a GitHub repository intelligence dashboard that transforms raw GitHub data into structured analytics, health metrics, development trends, and actionable engineering insights.
 
-Instead of manually exploring multiple sections of a GitHub repository, RepoLens brings important repository information together in a single dashboard.
+Instead of manually exploring repositories across multiple GitHub sections, RepoLens brings important engineering signals together into a single analytical dashboard.
+
+---
+
+## Live Demo
+
+https://repolens-ten.vercel.app/
+
+## Repository
+
+https://github.com/NitinSharma018/repolens
 
 ---
 
 ## Overview
 
-GitHub provides a large amount of information about repositories, but understanding the overall health and activity of a project can require checking multiple sections individually.
+GitHub repositories contain a large amount of information about development activity, contributors, issues, pull requests, releases, code structure, and project health.
 
-RepoLens simplifies this process by analyzing publicly available GitHub data and presenting it through a centralized dashboard.
+However, understanding the overall state of a repository often requires manually checking multiple sections.
 
-A user can enter either:
+RepoLens simplifies this process by collecting GitHub repository data and converting it into readable analytics and engineering-level insights.
 
-- A GitHub username
-- A GitHub repository URL
-- An `owner/repository` format
+A user can analyze a repository using:
 
-RepoLens then retrieves the relevant GitHub data and generates an analysis.
+- GitHub repository URL
+- `owner/repository` format
+- GitHub username
+
+The dashboard then retrieves the relevant GitHub data and generates a structured analysis.
 
 ---
 
-## Features
+# Core Features
 
-### GitHub Profile Analysis
+## 1. GitHub Profile Analysis
 
-Enter a GitHub username to view:
+RepoLens can analyze publicly available GitHub profile information including:
 
-- Profile information
-- Avatar
+- Profile avatar
+- Username
 - Bio
 - Public repositories
 - Followers
 - Following
 - Public gists
-- Account creation date
-- Profile update information
+- Account creation information
+- Profile activity information
 
 ---
 
-### Repository Analysis
+## 2. Repository Intelligence
 
-Analyze a public GitHub repository and view:
+The repository overview provides important metadata such as:
 
 - Repository name
 - Repository owner
@@ -61,100 +73,223 @@ Analyze a public GitHub repository and view:
 - Last push
 - Repository topics
 
+This gives users a quick overview of the repository before exploring deeper analytics.
+
 ---
 
-### Language Analytics
+## 3. Language Analytics
 
-RepoLens analyzes the language data returned by GitHub and presents the repository's code composition visually.
+RepoLens analyzes the programming languages detected in a repository.
 
-The dashboard includes:
+The dashboard provides:
 
-- Detected programming languages
-- Percentage distribution
+- Programming language distribution
+- Percentage contribution
 - Code size by language
-- Interactive language visualization
+- Visual language analytics
+
+This helps users understand the technical composition of a codebase.
 
 ---
 
-### Activity Analysis
+## 4. Contributor Intelligence
 
-RepoLens analyzes recent repository activity using commit data from the last 30 days.
+Contributor Intelligence analyzes repository contributors and development participation.
 
-It provides:
+It provides insights into:
 
-- Total commits detected
-- Latest commit
-- Last repository push
-- Daily commit activity
-- 30-day activity chart
-- Recent commit history
+- Contributor count
+- Contributor activity
+- Contribution distribution
+- Contribution concentration
+- Contributor risk indicators
+- Development participation patterns
+
+The module helps identify whether development activity is broadly distributed or concentrated among a small number of contributors.
 
 ---
 
-### Repository Health Score
+## 5. Issue & Pull Request Intelligence
 
-RepoLens calculates an overall repository health score based on multiple measurable GitHub signals.
+RepoLens analyzes repository issues and pull requests to provide a clearer picture of project workflow and collaboration.
 
-The current scoring model is:
+The analysis includes:
 
-| Metric | Weight |
-|--------|--------|
+- Open issues
+- Closed issues
+- Open pull requests
+- Pull request activity
+- Issue/PR risk indicators
+- Collaboration signals
+- Workflow health indicators
+
+This helps identify repositories that may have growing issue or pull request backlogs.
+
+---
+
+## 6. Codebase Intelligence
+
+Codebase Intelligence analyzes the repository file structure and available source files.
+
+It provides signals related to:
+
+- Repository structure
+- Source file distribution
+- Project organization
+- File-type composition
+- Codebase complexity indicators
+- Structural health
+
+The goal is to provide a high-level understanding of how the repository is organized without manually exploring the entire codebase.
+
+---
+
+## 7. Repository Health Intelligence
+
+Repository Health Intelligence evaluates multiple repository signals and produces a health score.
+
+The scoring model considers:
+
+| Category | Weight |
+|----------|--------|
 | Activity | 25% |
 | Maintenance | 25% |
 | Community | 20% |
 | Popularity | 15% |
 | Documentation | 15% |
 
-The final score is represented on a scale of:
+The final repository health score is represented on a:
 
 `0 - 100`
 
-This score is intended as a simplified analytical indicator rather than an official GitHub metric.
+scale.
+
+The score is a project-specific analytical indicator created by RepoLens and is not an official GitHub metric.
 
 ---
 
-### Documentation Analysis
+## 8. Development Trend Intelligence
 
-RepoLens checks repository-level documentation signals such as:
+Development Trend Intelligence analyzes recent development activity to identify repository trends.
+
+It evaluates signals such as:
+
+- Recent commits
+- Pull request activity
+- Development consistency
+- Activity patterns
+- Development momentum
+- Trend score
+
+The analysis is designed to answer a more useful question than simply:
+
+> "How many commits does this repository have?"
+
+Instead, it attempts to determine whether development activity appears healthy, stable, declining, or requires attention.
+
+---
+
+## 9. Release & Version Intelligence
+
+Release & Version Intelligence analyzes repository release information.
+
+It provides signals related to:
+
+- Latest releases
+- Release frequency
+- Version progression
+- Release consistency
+- Versioning health
+- Release-related engineering signals
+
+This helps evaluate how actively a project publishes stable versions and maintains its release lifecycle.
+
+---
+
+## 10. Overall Engineering Insights
+
+Overall Engineering Insights combines signals from the major RepoLens intelligence modules into a single engineering-level assessment.
+
+The current scoring model combines:
+
+| Intelligence Area | Weight |
+|--------------------|--------|
+| Repository Health | 25% |
+| Codebase Health | 20% |
+| Development Trend | 15% |
+| Issue & PR Intelligence | 15% |
+| Contributor Intelligence | 10% |
+| Release Intelligence | 15% |
+
+The final score is represented on a:
+
+`0 - 100`
+
+scale.
+
+RepoLens also generates:
+
+- Overall engineering score
+- Engineering verdict
+- Strengths
+- Risks
+- Improvement areas
+- Recommendations
+- Final engineering insight
+
+### Engineering Verdicts
+
+The overall score is classified into four levels:
+
+| Score | Verdict |
+|-------|---------|
+| 80 - 100 | EXCELLENT |
+| 65 - 79 | HEALTHY |
+| 45 - 64 | NEEDS ATTENTION |
+| 0 - 44 | AT RISK |
+
+This provides a high-level engineering summary while still allowing users to inspect the individual intelligence modules.
+
+---
+
+# Documentation Analysis
+
+RepoLens also evaluates repository-level documentation signals.
+
+The documentation analysis checks for the presence of:
 
 - README
 - License
 - Contributing guidelines
 - Code of Conduct
 
-The documentation score is calculated using the presence of these signals.
+These signals contribute to the repository's documentation-related analysis.
 
 ---
 
-### Automated Insights
+# Automated Engineering Insights
 
-Based on the collected repository data, RepoLens generates readable observations such as:
+RepoLens converts repository data into readable observations instead of presenting only raw numbers.
+
+Examples of generated insights include:
 
 - Strong development activity
-- Recent maintenance activity
+- Recent repository maintenance
 - Significant community visibility
-- Community fork activity
+- Contributor concentration
 - Documentation coverage
-- Areas where repository health could be improved
+- Release consistency
+- Development trend observations
+- Potential engineering risks
+- Recommended improvement areas
+
+The objective is to make repository analysis easier to understand for developers, students, technical reviewers, and recruiters.
 
 ---
 
-### Responsive Design
+# How RepoLens Works
 
-RepoLens is designed to work across:
-
-- Desktop
-- Laptop
-- Tablet
-- Mobile devices
-
-The dashboard adapts its layout according to the available screen size.
-
----
-
-## How It Works
-
-The basic workflow of RepoLens is:
+The high-level workflow is:
 
 ```text
 User Input
@@ -163,73 +298,65 @@ User Input
 Parse GitHub Username / Repository
     |
     v
-GitHub REST API
+GitHub API
     |
     v
 Retrieve Repository Data
     |
-    +--------------------+
-    |                    |
-    v                    v
-Languages             Commits
-    |                    |
-    +---------+----------+
+    +-------------------+
+    |                   |
+    v                   v
+Repository Data     Development Data
+    |                   |
+    +---------+---------+
               |
               v
        Data Processing
               |
-      +-------+-------+
-      |       |       |
-      v       v       v
-  Analytics Health  Insights
-      |       |       |
-      +-------+-------+
+      +-------+-------+----------------+
+      |       |       |                |
+      v       v       v                v
+  Analytics Health  Trends        Intelligence
+      |       |       |                |
+      +-------+-------+----------------+
+              |
+              v
+     Overall Engineering Analysis
               |
               v
        RepoLens Dashboard
 
-Health Score Methodology
+GitHub API Architecture
 
-The repository health score is calculated using five categories.
+RepoLens uses the GitHub REST API for repository and profile data.
 
-1. Activity — 25%
+API requests are handled through a server-side proxy endpoint so that the GitHub authentication token is not exposed directly in the browser.
 
-Measures recent development activity using signals such as:
+High-level architecture:
 
-Number of commits detected in the last 30 days
-Recency of repository pushes
+React Frontend
+      |
+      v
+RepoLens API Proxy
+      |
+      v
+GitHub REST API
+      |
+      v
+Repository Data
+      |
+      v
+Analytics Engine
+      |
+      v
+Dashboard
 
-Higher recent activity contributes to a higher score.
+The GitHub token is stored as an environment variable:
 
-2. Maintenance — 25%
+GITHUB_TOKEN
 
-Evaluates how recently the repository was updated.
+The token should never be committed to the repository.
 
-Recent pushes receive a higher maintenance score, while repositories that have not been updated for a long period receive a lower score.
-
-3. Community — 20%
-
-Uses community-related repository signals such as:
-
-Fork count
-Open issues
-
-These values provide an indication of community interaction with the repository.
-
-4. Popularity — 15%
-
-Uses repository star count as a popularity signal.
-
-The calculation uses a logarithmic scale so that extremely popular repositories do not completely dominate the overall score.
-
-5. Documentation — 15%
-
-Evaluates the presence of documentation-related files and metadata:
-
-README
-License
-Contributing guidelines
-Code of Conduct
 Tech Stack
 Frontend
 React
@@ -240,18 +367,38 @@ Data Visualization
 Recharts
 Icons
 Lucide React
-API
+Backend / API Layer
+Vercel Serverless Function
 GitHub REST API
 Development Tools
 Node.js
 npm
 Git
+Deployment
+Vercel
+GitHub
 Project Structure
 repolens/
+│
+├── api/
+│   └── github.ts
 │
 ├── public/
 │
 ├── src/
+│   │
+│   ├── analytics/
+│   │   └── overallEngineeringAnalysis.ts
+│   │
+│   ├── components/
+│   │   ├── ContributorIntelligence.tsx
+│   │   ├── IssuePRIntelligence.tsx
+│   │   ├── CodebaseIntelligence.tsx
+│   │   ├── RepositoryHealthIntelligence.tsx
+│   │   ├── DevelopmentTrendIntelligence.tsx
+│   │   ├── ReleaseVersionIntelligence.tsx
+│   │   └── OverallEngineeringInsights.tsx
+│   │
 │   ├── services/
 │   │   └── githubApi.ts
 │   │
@@ -287,7 +434,7 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/YOUR_USERNAME/repolens.git
+git clone https://github.com/NitinSharma018/repolens.git
 
 Navigate into the project:
 
@@ -296,31 +443,45 @@ cd repolens
 Install dependencies:
 
 npm install
-Running the Development Server
+Environment Configuration
 
-Start the development server:
+RepoLens uses a GitHub authentication token for server-side API requests.
+
+Create a local environment file:
+
+.env.local
+
+Add:
+
+GITHUB_TOKEN=your_github_token
+
+The token must remain private and should never be committed to Git.
+
+Running Locally
+
+Start the development environment:
 
 npm run dev
 
-Vite will provide a local development URL, usually:
+For the Vercel API proxy to work locally, use the Vercel development environment when required:
 
-http://localhost:5173
+npx vercel dev
 
-Open the URL in your browser.
+Open the local URL provided by Vercel/Vite in your browser.
 
 Production Build
 
-To create a production build:
+To verify the production build:
 
 npm run build
 
-The production files will be generated inside:
+The production output is generated inside:
 
 dist/
 Usage
 Analyze a Repository
 
-Enter a repository in one of the following formats:
+Enter a repository using either:
 
 facebook/react
 
@@ -328,38 +489,23 @@ or:
 
 https://github.com/facebook/react
 
-Then click:
+Then select:
 
 Analyze
 
-RepoLens retrieves the repository information and displays the analysis dashboard.
+RepoLens retrieves the repository information and generates the intelligence dashboard.
 
 Analyze a GitHub Profile
 
-Enter a GitHub username:
+Enter a GitHub username such as:
 
 torvalds
 
-RepoLens will display the available public profile information.
+RepoLens then displays the available public profile information.
 
-API Usage
-
-RepoLens uses the GitHub REST API to retrieve publicly available GitHub information.
-
-The application currently retrieves data related to:
-
-Users
-Repositories
-Repository languages
-Repository commits
-Repository contents
-
-The API integration is implemented in:
-
-src/services/githubApi.ts
 Error Handling
 
-RepoLens handles common API-related situations including:
+RepoLens handles common API and input scenarios including:
 
 Invalid usernames
 Invalid repositories
@@ -367,28 +513,24 @@ Missing GitHub resources
 API rate limits
 Authentication-related API responses
 Empty input
+API request failures
 
-Instead of displaying a blank page, the application provides an appropriate error message to the user.
+Instead of leaving the dashboard blank, the application provides an appropriate error state.
 
 Limitations
+Public GitHub Data
 
-RepoLens currently has some limitations.
+RepoLens primarily focuses on publicly accessible GitHub repository and profile data.
 
-GitHub API Rate Limits
+Analytical Scores
 
-The application relies on GitHub's public API endpoints. API requests are subject to GitHub's rate limits.
+Health and engineering scores are project-specific analytical models created for RepoLens.
 
-Public Repository Data
+They should be treated as indicators rather than official GitHub measurements.
 
-The application is primarily designed around publicly accessible GitHub data.
+Recent Activity
 
-Health Score
-
-The health score is a project-specific analytical model created for RepoLens. It is not an official GitHub metric.
-
-Commit Analysis
-
-The activity chart currently focuses on commit activity detected during the most recent 30-day period.
+Some development analytics focus on recent repository activity rather than the complete historical development timeline.
 
 Design Philosophy
 
@@ -396,29 +538,31 @@ RepoLens follows a simple principle:
 
 Raw GitHub data is useful. Understanding it is better.
 
-The goal is not to replace GitHub, but to provide a faster way to understand the important signals of a repository without manually navigating through multiple GitHub sections.
+The goal is not to replace GitHub.
 
-Future Improvements
+The goal is to provide a faster way to understand the important engineering signals of a repository without manually navigating through multiple GitHub sections.
 
-Possible future improvements include:
+Future Roadmap
 
-GitHub authentication
-Extended commit history
-Pull request analytics
-Issue trend analysis
-Contributor analytics
+Potential future improvements include:
+
+Historical repository trend tracking
 Repository comparison
-More advanced health scoring
-Historical repository trends
-Additional visualizations
+Advanced caching
 Performance optimization
-API caching
-More detailed repository insights
+More detailed engineering metrics
+Extended historical analytics
+Additional visualization modules
+More advanced recommendation models
+Improved cross-repository analysis
 Development
 
 To modify the project locally:
 
 npm install
+
+Start development:
+
 npm run dev
 
 After making changes, verify the production build:
@@ -426,9 +570,9 @@ After making changes, verify the production build:
 npm run build
 License
 
-This project is intended as a portfolio and learning project.
+This project is currently intended as a portfolio and learning project.
 
-A specific open-source license can be added if the project is distributed for reuse.
+A specific open-source license can be added if the project is later distributed for reuse.
 
 Author
 
@@ -436,12 +580,30 @@ Built as a personal developer project to explore:
 
 React
 TypeScript
-GitHub API integration
+GitHub REST API integration
 Data visualization
 Repository analytics
+Engineering metrics
 Frontend dashboard development
-Repository Status
+API architecture
+Production deployment
+Project Status
 
-RepoLens is currently in a completed first production-ready implementation.
+RepoLens is currently in a production-ready first implementation.
 
-The current implementation includes GitHub profile analysis, repository analysis, language analytics, activity visualization, documentation signals, repository health scoring, and automated insights.
+The current dashboard includes:
+
+GitHub Profile Analysis
+Repository Intelligence
+Language Analytics
+Contributor Intelligence
+Issue & PR Intelligence
+Codebase Intelligence
+Repository Health Intelligence
+Development Trend Intelligence
+Release & Version Intelligence
+Documentation Analysis
+Overall Engineering Insights
+Automated Engineering Recommendations
+Responsive dashboard design
+Server-side GitHub API authentication
